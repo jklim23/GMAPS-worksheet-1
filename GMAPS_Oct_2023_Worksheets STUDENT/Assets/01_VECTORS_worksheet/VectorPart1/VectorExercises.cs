@@ -10,9 +10,10 @@ public class VectorExercises : MonoBehaviour
 
     private Vector2 startPt;
     private Vector2 endPt;
-
+    private Vector3 endPtV3;
+    private Vector3 startPtV3;
     public float GameWidth, GameHeight;
-    private float minX, minY, maxX, maxY;
+    private float minX, minY, maxX, maxY,zByUser;
 
     private void Start()
     {
@@ -23,7 +24,16 @@ public class VectorExercises : MonoBehaviour
         //CalculateGameDimensions();
         //Question2b(20);
 
-        Question2d();
+        //call the method qns2D to draw a lines
+        //Question2d();
+
+        //call the method qns2e to draw a lines
+        //set max X and Y to 5 and zByUser to 10, zByUser is the z coordinates that the developer can set 
+        maxX = 5; 
+        maxY = 5;
+        zByUser = 10;
+        Question2e(20);
+
         /*if (Q2a)
             Question2a();
         if (Q2b)
@@ -100,18 +110,17 @@ public class VectorExercises : MonoBehaviour
     {
         for (int i = 0; i < n; i++)
         {
-            startPt = new Vector2(
-                Random.Range(-maxX, maxX), 
-                Random.Range(-maxY, maxY));
+                endPtV3 = new Vector3(
+                Random.Range(-maxX, maxX),
+                Random.Range(-maxY, maxY), 
+                zByUser);
 
-            // Your code here
-            // ...
-
-            //DebugExtension.DebugArrow(
-            //    new Vector3(0, 0, 0),
-            //    // Your code here,
-            //    Color.white,
-            //    60f);
+                DebugExtension.DebugArrow(
+                startPtV3,
+                endPtV3,
+                Color.blue,
+                60f);
+                
         }  
     }
 
