@@ -16,7 +16,11 @@ public class VectorExercises : MonoBehaviour
 
     private void Start()
     {
-        if (Q2a)
+        //call the method qns2 to draw a diagonal line
+        Question2a();
+
+
+        /*if (Q2a)
             Question2a();
         if (Q2b)
             Question2b(20);
@@ -31,7 +35,7 @@ public class VectorExercises : MonoBehaviour
         if (Q3c)
             Question3c();
         if (projection)
-            Projection();
+            Projection();*/
     }
 
     public void CalculateGameDimensions()
@@ -41,7 +45,21 @@ public class VectorExercises : MonoBehaviour
 
     void Question2a()
     {
+        /*startPt is starting point of the line which is vector 0,0 and endPt is the end point of the line which is vector 2,3
+        so the line should be drawn from 0,0 and diagonally reach 2,3 */
+        startPt = new Vector2(0,0);
+        endPt = new Vector2(2, 3);
 
+        /*draw the line using the GetLine method which takes in 4 inputs, the start point of the line, the end point of the line, the width of the line 
+          and the colour of the line.  */
+        drawnLine = lineFactory.GetLine(startPt,endPt,0.02f,Color.green);
+
+        //EnableDrawing(true) initialises the line, if the bool is false then no line will show up 
+        drawnLine.EnableDrawing(true);
+
+        //find the magnitude of the line and print debug log statement
+        Vector2 vec2 = endPt - startPt;
+        Debug.Log("Magnitude = " + vec2.magnitude);
     }
 
     void Question2b(int n)
