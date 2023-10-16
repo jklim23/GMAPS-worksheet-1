@@ -20,9 +20,10 @@ public class VectorExercises : MonoBehaviour
         //Question2a();
 
         //call the method qns2b to draw a lines
-        CalculateGameDimensions();
-        Question2b(20);
-        
+        //CalculateGameDimensions();
+        //Question2b(20);
+
+        Question2d();
         /*if (Q2a)
             Question2a();
         if (Q2b)
@@ -84,11 +85,15 @@ public class VectorExercises : MonoBehaviour
             //draw the line using the values of startPt,endPt with the width of the line being 0.02f and the color of the line be blue 
             drawnLine = lineFactory.GetLine(startPt, endPt,0.02f,Color.blue);
         }
+        Debug.Log("qns 2b is running");
     }
 
     void Question2d()
     {
-
+        DebugExtension.DebugArrow(
+            new Vector3(0,0,0),
+            new Vector3(5,5,0),Color.magenta,60f);
+        Debug.Log("qns 2d is running");
     }
 
     void Question2e(int n)
