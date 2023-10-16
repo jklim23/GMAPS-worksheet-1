@@ -20,8 +20,7 @@ public class VectorExercises : MonoBehaviour
         //Question2a();
 
         //call the method qns2b to draw a lines
-        maxX = 5f;
-        maxY = 5f;
+        CalculateGameDimensions();
         Question2b(20);
         
         /*if (Q2a)
@@ -44,7 +43,13 @@ public class VectorExercises : MonoBehaviour
 
     public void CalculateGameDimensions()
     {
+        GameHeight = Camera.main.orthographicSize * 2f;
+        GameWidth = Camera.main.aspect * GameHeight;
 
+        maxX = GameWidth / 2;
+        maxY = GameHeight / 2;
+        minX = -maxX;
+        minY = -maxY;
     }
 
     void Question2a()
