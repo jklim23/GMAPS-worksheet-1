@@ -16,10 +16,10 @@ public class VectorExercises : MonoBehaviour
 
     private void Start()
     {
-        //call the method qns2 to draw a diagonal line
+        //call the method qns2a to draw a diagonal line
         //Question2a();
 
-        //call the method qns2 to draw a diagonal line
+        //call the method qns2b to draw a lines
         maxX = 5f;
         maxY = 5f;
         Question2b(20);
