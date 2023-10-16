@@ -17,9 +17,13 @@ public class VectorExercises : MonoBehaviour
     private void Start()
     {
         //call the method qns2 to draw a diagonal line
-        Question2a();
+        //Question2a();
 
-
+        //call the method qns2 to draw a diagonal line
+        maxX = 5f;
+        maxY = 5f;
+        Question2b(20);
+        
         /*if (Q2a)
             Question2a();
         if (Q2b)
@@ -60,11 +64,21 @@ public class VectorExercises : MonoBehaviour
         //find the magnitude of the line and print debug log statement
         Vector2 vec2 = endPt - startPt;
         Debug.Log("Magnitude = " + vec2.magnitude);
+        Debug.Log("qns 2a is running");
+
     }
 
     void Question2b(int n)
     {
-
+        //for loop to last for however many lines there is to be drawn in the int n parameter   
+        for (int i = 0; i < n; i++)
+        {
+            //randomise the starting and ending points of the lines 
+            startPt = new Vector2(Random.Range(-maxX,maxX),Random.Range(-maxY,maxY));
+            endPt = new Vector2(Random.Range(-maxX, maxX), Random.Range(-maxY, maxY));
+            //draw the line using the values of startPt,endPt with the width of the line being 0.02f and the color of the line be blue 
+            drawnLine = lineFactory.GetLine(startPt, endPt,0.02f,Color.blue);
+        }
     }
 
     void Question2d()
