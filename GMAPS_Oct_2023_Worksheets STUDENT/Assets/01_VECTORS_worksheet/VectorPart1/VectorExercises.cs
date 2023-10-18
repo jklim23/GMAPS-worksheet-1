@@ -29,10 +29,12 @@ public class VectorExercises : MonoBehaviour
 
         //call the method qns2e to draw a lines
         //set max X and Y to 5 and zByUser to 10, zByUser is the z coordinates that the developer can set 
-        maxX = 5; 
-        maxY = 5;
-        minY = 10;
-        Question2e(20);
+        //maxX = 5; 
+        //maxY = 5;
+        //minY = 10;
+        //Question2e(20);
+        
+        Question3a();
 
         /*if (Q2a)
             Question2a();
@@ -116,7 +118,7 @@ public class VectorExercises : MonoBehaviour
                 Random.Range(-minY, minY));
 
                 DebugExtension.DebugArrow(
-                startPtV3,
+                Vector3.zero,
                 endPtV3,
                 Color.blue,
                 60f);
@@ -127,10 +129,10 @@ public class VectorExercises : MonoBehaviour
     public void Question3a()
     {
         HVector2D a = new HVector2D(3, 5);
-        //HVector2D b = // Your code here;
-        //HVector2D c = // Your code here;
+        HVector2D b = new HVector2D(-4, 2);
+        HVector2D c = new HVector2D((a.x+b.x),(a.y+b.y));
 
-        DebugExtension.DebugArrow(Vector3.zero, a.ToUnityVector3(), Color.red, 60f);
+        DebugExtension.DebugArrow(Vector3.zero, a, Color.red, 60f);
         // Your code here
         // ...
 
