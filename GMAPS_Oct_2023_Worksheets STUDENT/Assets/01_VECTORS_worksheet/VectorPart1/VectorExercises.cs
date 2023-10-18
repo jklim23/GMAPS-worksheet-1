@@ -13,7 +13,7 @@ public class VectorExercises : MonoBehaviour
     private Vector3 endPtV3;
     private Vector3 startPtV3;
     public float GameWidth, GameHeight;
-    private float minX, minY, maxX, maxY,zByUser;
+    private float minX, minY, maxX, maxY;
 
     private void Start()
     {
@@ -31,7 +31,7 @@ public class VectorExercises : MonoBehaviour
         //set max X and Y to 5 and zByUser to 10, zByUser is the z coordinates that the developer can set 
         maxX = 5; 
         maxY = 5;
-        zByUser = 10;
+        minY = 10;
         Question2e(20);
 
         /*if (Q2a)
@@ -113,7 +113,7 @@ public class VectorExercises : MonoBehaviour
                 endPtV3 = new Vector3(
                 Random.Range(-maxX, maxX),
                 Random.Range(-maxY, maxY),
-                Random.Range(-zByUser, zByUser));
+                Random.Range(-minY, minY));
 
                 DebugExtension.DebugArrow(
                 startPtV3,
