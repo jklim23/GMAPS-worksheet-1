@@ -132,7 +132,7 @@ public class VectorExercises : MonoBehaviour
         HVector2D b = new HVector2D(-4, 2);
         HVector2D c = new HVector2D((a.x+b.x),(a.y+b.y));
 
-        DebugExtension.DebugArrow(Vector3.zero, a, Color.red, 60f);
+        DebugExtension.DebugArrow(Vector3.zero, a.ToUnityVector3(), Color.red, 60f);
         // Your code here
         // ...
 
