@@ -112,8 +112,8 @@ public class VectorExercises : MonoBehaviour
         {
                 endPtV3 = new Vector3(
                 Random.Range(-maxX, maxX),
-                Random.Range(-maxY, maxY), 
-                zByUser);
+                Random.Range(-maxY, maxY),
+                Random.Range(-zByUser, zByUser));
 
                 DebugExtension.DebugArrow(
                 startPtV3,
