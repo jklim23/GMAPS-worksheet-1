@@ -128,15 +128,16 @@ public class VectorExercises : MonoBehaviour
 
     public void Question3a()
     {
-        HVector2D a = new HVector2D(3, 5);
-        HVector2D b = new HVector2D(-4, 2);
-        HVector2D c = new HVector2D((a.x+b.x),(a.y+b.y));
+        HVector2D a = new HVector2D(3f, 5f);
+        HVector2D b = new HVector2D(-4f, 2f);
+        HVector2D c = a + b;
 
         DebugExtension.DebugArrow(Vector3.zero, a.ToUnityVector3(), Color.red, 60f);
-        // Your code here
-        // ...
+        DebugExtension.DebugArrow(Vector3.zero, b.ToUnityVector3(), Color.green, 60f);
+        DebugExtension.DebugArrow(Vector3.zero, c.ToUnityVector3(), Color.white, 60f);
 
-        // Your code here
+        DebugExtension.DebugArrow(a.ToUnityVector3(), b.ToUnityVector3(), Color.green, 60f);
+        
 
         //Debug.Log("Magnitude of a = " + // Your code here.ToString("F2"));
         // Your code here

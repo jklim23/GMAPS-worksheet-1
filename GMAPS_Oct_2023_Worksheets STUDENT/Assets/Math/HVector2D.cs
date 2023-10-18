@@ -6,7 +6,7 @@ using System;
 //[Serializable]
 public class HVector2D
 {
-    public float x, y;
+    public float x, y,z;
     public float h;
 
     public HVector2D(float _x, float _y)
@@ -50,15 +50,17 @@ public class HVector2D
 
         // }
 
-         public float Magnitude()
-         {
-            return Vector3.Magnitude();
-         }
+         //public float Magnitude()
+         //{
+         //   //return Vector3.Magnitude();
+         //}
 
-         public void Normalize()
-         {
-            float mag = Magnitude();
-         }
+         //public void Normalize()
+         //{
+         //   float mag = Magnitude();
+         //   x /= mag;
+         //   y /= mag;
+         //}
 
         // public float DotProduct(/*???*/)
         // {
@@ -75,14 +77,15 @@ public class HVector2D
 
         // }
 
-        public Vector2 ToUnityVector2()
+    public Vector2 ToUnityVector2()
     {
-        return Vector2.zero; // change this
+        return new Vector2(x, y);
+
     }
 
     public Vector3 ToUnityVector3()
     {
-        return Vector3.zero; // change this
+        return new Vector3(x,y,z);
     }
 
     // public void Print()
