@@ -82,7 +82,7 @@ public class HVector2D
 
     public Vector3 ToUnityVector3()
     {
-        return Vector3. // change this
+        return Vector3.zero; // change this
     }
 
     // public void Print()
