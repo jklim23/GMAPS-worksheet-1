@@ -36,9 +36,9 @@ public class VectorExercises : MonoBehaviour
         //minY = 10;
         //Question2e(20);
 
-        Question3a();
+        //Question3a();
 
-        //Question3b();
+        Question3b();
     }
 
     public void CalculateGameDimensions()
@@ -149,10 +149,18 @@ public class VectorExercises : MonoBehaviour
 
     public void Question3b()
     {
+        
         HVector2D a = new HVector2D(3f, 5f);
-
-
+        //multiplication of vectors 
+        HVector2D b = a * 2;
+        //devision of vectors 
+        HVector2D c = a / 2;
+        //line a 
         DebugExtension.DebugArrow(Vector3.zero, a.ToUnityVector3(), Color.red, 60f);
+        //line b
+        DebugExtension.DebugArrow(Vector3.right, b.ToUnityVector3(), Color.green, 60f);
+        //line c (a divided by 2) 
+        DebugExtension.DebugArrow(Vector3.right, c.ToUnityVector3(), Color.green, 60f);
         
     }
 
