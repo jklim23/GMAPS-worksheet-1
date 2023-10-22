@@ -37,7 +37,7 @@ public class HVector2D
 
      public static HVector2D operator -(HVector2D a,HVector2D b)
      {
-        return new HVector2D((a.x- b.x),(a.y - b.x) );
+        return new HVector2D((a.x- b.x),(a.y - b.y) );
      }
 
         // public static HVector2D operator *(/*???*/)

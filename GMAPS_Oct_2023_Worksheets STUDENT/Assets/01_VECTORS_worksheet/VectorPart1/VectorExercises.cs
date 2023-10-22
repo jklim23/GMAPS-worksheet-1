@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class VectorExercises : MonoBehaviour
 {
@@ -33,25 +35,10 @@ public class VectorExercises : MonoBehaviour
         //maxY = 5;
         //minY = 10;
         //Question2e(20);
-        
+
         Question3a();
 
-        /*if (Q2a)
-            Question2a();
-        if (Q2b)
-            Question2b(20);
-        if (Q2d)
-            Question2d();
-        if (Q2e)
-            Question2e(20);
-        if (Q3a)
-            Question3a();
-        if (Q3b)
-            Question3b();
-        if (Q3c)
-            Question3c();
-        if (projection)
-            Projection();*/
+        //Question3b();
     }
 
     public void CalculateGameDimensions()
@@ -130,27 +117,43 @@ public class VectorExercises : MonoBehaviour
     {
         HVector2D a = new HVector2D(3f, 5f);
         HVector2D b = new HVector2D(-4f, 2f);
-        HVector2D c = a + b;
 
+        HVector2D c = a + b;
+        HVector2D d = a - b;
+
+        //line a and b
         DebugExtension.DebugArrow(Vector3.zero, a.ToUnityVector3(), Color.red, 60f);
         DebugExtension.DebugArrow(Vector3.zero, b.ToUnityVector3(), Color.green, 60f);
-        DebugExtension.DebugArrow(Vector3.zero, c.ToUnityVector3(), Color.white, 60f);
 
-        DebugExtension.DebugArrow(a.ToUnityVector3(), b.ToUnityVector3(), Color.green, 60f);
+        //sum of a and b (line c)
+        //DebugExtension.DebugArrow(Vector3.zero, c.ToUnityVector3(), Color.white, 60f);
+
+        //subtraction of b from a (line d)
+        DebugExtension.DebugArrow(Vector3.zero, d.ToUnityVector3(), Color.white, 60f);
+
+        //line b from a
+        //DebugExtension.DebugArrow(a.ToUnityVector3(), b.ToUnityVector3(), Color.green, 60f);
+
+        //line -b from a 
+        DebugExtension.DebugArrow(a.ToUnityVector3(), -b.ToUnityVector3(), Color.green, 60f);
+
+        Vector2 MagA = a.ToUnityVector3() - Vector3.zero;
+        Debug.Log("Magnitude of a = " + String.Format("{0:0.00}", MagA.magnitude));
+        Vector2 MagB = b.ToUnityVector3() - Vector3.zero;
+        Debug.Log("Magnitude of b = " + String.Format("{0:0.00}", MagB.magnitude));
+        Vector2 MagC = c.ToUnityVector3() - Vector3.zero;
+        Debug.Log("Magnitude of c = " + String.Format("{0:0.00}", MagC.magnitude));
+
         
-
-        //Debug.Log("Magnitude of a = " + // Your code here.ToString("F2"));
-        // Your code here
-        // ...
     }
 
     public void Question3b()
     {
-        // Your code here
-        // ...
+        HVector2D a = new HVector2D(3f, 5f);
 
-        //DebugExtension.DebugArrow(Vector3.zero, a.ToUnityVector3(), Color.red, 60f);
-        // Your code here
+
+        DebugExtension.DebugArrow(Vector3.zero, a.ToUnityVector3(), Color.red, 60f);
+        
     }
 
     public void Question3c()
