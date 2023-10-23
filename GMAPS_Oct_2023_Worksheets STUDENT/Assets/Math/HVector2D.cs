@@ -6,7 +6,7 @@ using System;
 //[Serializable]
 public class HVector2D
 {
-    public float x, y,z;
+    public float x, y, z;
     public float h;
 
     public HVector2D(float _x, float _y)
