@@ -6,7 +6,7 @@ using System;
 //[Serializable]
 public class HVector2D
 {
-    public float x, y, z;
+    public float x, y,  z;
     public float h;
 
     public HVector2D(float _x, float _y)
@@ -52,7 +52,7 @@ public class HVector2D
 
      public float Magnitude()
      {
-        return (float)Math.Sqrt(x * x + y * y  );
+        return (float) Math.Sqrt(x * x + y * y + z * z );
      }
 
      public void Normalize()
