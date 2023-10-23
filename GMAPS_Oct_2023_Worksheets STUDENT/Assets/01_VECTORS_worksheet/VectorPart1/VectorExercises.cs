@@ -170,9 +170,8 @@ public class VectorExercises : MonoBehaviour
     public void Question3c()
     {
         HVector2D a = new HVector2D(3f, 5f);
-        
-        
         DebugExtension.DebugArrow(Vector3.zero, a.ToUnityVector3(), Color.red, 60f);
+
         a.Normalize();
         DebugExtension.DebugArrow(Vector3.right, a.ToUnityVector3(), Color.green, 60f);
         Debug.Log("Magnitude of a = " + String.Format("{0:0.00}", a.Magnitude()));
