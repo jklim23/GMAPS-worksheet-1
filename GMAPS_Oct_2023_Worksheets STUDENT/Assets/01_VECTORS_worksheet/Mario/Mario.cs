@@ -19,9 +19,13 @@ public class Mario : MonoBehaviour
 
     void FixedUpdate()
     {
-        gravityDir = ();
-        moveDir = new Vector3();
+        //gravityDir = ();
+        //moveDir = new Vector3( ,0f);
         moveDir = moveDir.normalized * -1.0f;
+
+        rb.AddForce(gravityDir);
+
+        DebugExtension.DebugArrow(new Vector3(0f,0f,0f), new Vector3(10f,10f,0f), Color.red,60f);
     }
 }
 
