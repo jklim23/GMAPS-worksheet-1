@@ -40,8 +40,8 @@ public class VectorExercises : MonoBehaviour
         //Question3a();
 
         //Question3b();
-        //Question3c();
-        Projection();
+        Question3c();
+        //Projection();
     }
 
     public void CalculateGameDimensions()
@@ -170,12 +170,12 @@ public class VectorExercises : MonoBehaviour
     public void Question3c()
     {
         HVector2D a = new HVector2D(3f, 5f);
-        Vector2 MagA = a.ToUnityVector3() - Vector3.zero;
-        MagA.Normalize();
-        DebugExtension.DebugArrow(Vector3.zero, a.ToUnityVector3(), Color.red, 60f);
         
-        DebugExtension.DebugArrow(Vector3.right, MagA, Color.green, 60f);
-        Debug.Log("Magnitude of a = " + String.Format("{0:0.00}", MagA.magnitude));
+        
+        DebugExtension.DebugArrow(Vector3.zero, a.ToUnityVector3(), Color.red, 60f);
+        a.Normalize();
+        DebugExtension.DebugArrow(Vector3.right, a.ToUnityVector3(), Color.green, 60f);
+        Debug.Log("Magnitude of a = " + String.Format("{0:0.00}", a.Magnitude()));
     }
 
     public void Projection()
