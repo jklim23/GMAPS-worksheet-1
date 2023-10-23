@@ -19,7 +19,7 @@ public class Mario : MonoBehaviour
 
     void FixedUpdate()
     {
-        gravityDir = new Vector3();
+        gravityDir = ();
         moveDir = new Vector3();
         moveDir = moveDir.normalized * -1.0f;
     }
