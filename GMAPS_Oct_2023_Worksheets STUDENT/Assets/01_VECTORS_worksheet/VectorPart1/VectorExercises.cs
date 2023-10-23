@@ -37,10 +37,10 @@ public class VectorExercises : MonoBehaviour
         //minY = 10;
         //Question2e(20);
 
-        //Question3a();
+        Question3a();
 
         //Question3b();
-        Question3c();
+        //Question3c();
         //Projection();
     }
 
@@ -140,12 +140,12 @@ public class VectorExercises : MonoBehaviour
         //line -b from a 
         DebugExtension.DebugArrow(a.ToUnityVector3(), -b.ToUnityVector3(), Color.green, 60f);
 
-        Vector2 MagA = a.ToUnityVector3() - Vector3.zero;
-        Debug.Log("Magnitude of a = " + String.Format("{0:0.00}", MagA.magnitude));
-        Vector2 MagB = b.ToUnityVector3() - Vector3.zero;
-        Debug.Log("Magnitude of b = " + String.Format("{0:0.00}", MagB.magnitude));
-        Vector2 MagC = c.ToUnityVector3() - Vector3.zero;
-        Debug.Log("Magnitude of c = " + String.Format("{0:0.00}", MagC.magnitude));
+        //Vector2 MagA = a.ToUnityVector3() - Vector3.zero;
+        Debug.Log("Magnitude of a = " + String.Format("{0:0.00}", a.Magnitude()));
+        //Vector2 MagB = b.ToUnityVector3() - Vector3.zero;
+        Debug.Log("Magnitude of b = " + String.Format("{0:0.00}", b.Magnitude()));
+        //Vector2 MagC = c.ToUnityVector3() - Vector3.zero;
+        Debug.Log("Magnitude of c = " + String.Format("{0:0.00}", c.Magnitude()));
 
         
     }
