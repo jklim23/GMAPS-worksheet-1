@@ -19,11 +19,18 @@ public class Mario : MonoBehaviour
 
     void FixedUpdate()
     {
-        //gravityDir = ();
-        //moveDir = new Vector3( ,0f);
+        gravityDir = (planet.position - transform.position);
+        moveDir = new Vector3( transform.position.y,-transform.position.x);
         moveDir = moveDir.normalized * -1.0f;
 
-        rb.AddForce(gravityDir);
+        rb.AddForce(new Vector2(force,0f));
+        gravityNorm = gravityDir.normalized;
+        rb.AddForce(gravityNorm * gravityStrength);
+
+        float angle = Vector3.SignedAngle(planet.position,gravityDir,Vector3.forward);
+
+        rb.MoveRotation(Quaternion.Euler(moveDir));
+
 
         DebugExtension.DebugArrow(new Vector3(0f,0f,0f), new Vector3(10f,10f,0f), Color.red);
     }
