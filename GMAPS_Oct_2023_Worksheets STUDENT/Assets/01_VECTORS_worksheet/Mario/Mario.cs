@@ -25,7 +25,7 @@ public class Mario : MonoBehaviour
 
         rb.AddForce(gravityDir);
 
-        DebugExtension.DebugArrow(new Vector3(0f,0f,0f), new Vector3(10f,10f,0f), Color.red,60f);
+        DebugExtension.DebugArrow(new Vector3(0f,0f,0f), new Vector3(10f,10f,0f), Color.red);
     }
 }
 
