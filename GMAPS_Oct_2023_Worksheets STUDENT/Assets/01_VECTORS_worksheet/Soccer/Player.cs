@@ -6,6 +6,17 @@ public class Player : MonoBehaviour
 {
     public bool IsCaptain = true;
     public Player OtherPlayer;
+    void FixedUpdate()
+    {
+        if (IsCaptain)
+        {
+            //float angle = // Your code here
+            //Debug.Log(angle);
+            
+            DebugExtension.DebugArrow(transform.position, OtherPlayer.transform.position, Color.red);
+
+        }
+    }
 
     //float Magnitude(Vector3 vector)
     //{
@@ -66,12 +77,5 @@ public class Player : MonoBehaviour
     //    // Your code here
     //}
 
-    void Update()
-    {
-        if (IsCaptain)
-        {
-            //float angle = // Your code here
-            //Debug.Log(angle);
-        }
-    }
+
 }
