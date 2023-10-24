@@ -6,7 +6,7 @@ using System;
 //[Serializable]
 public class HVector2D
 {
-    public float x, y,  z;
+    public float x, y;
     public float h;
 
     public HVector2D(float _x, float _y)
@@ -52,7 +52,7 @@ public class HVector2D
 
      public float Magnitude()
      {
-        return (float) Math.Sqrt(x * x + y * y + z * z );
+        return (float) Math.Sqrt(x * x + y * y  );
      }
 
      public void Normalize()
@@ -86,7 +86,7 @@ public class HVector2D
 
     public Vector3 ToUnityVector3()
     {
-        return new Vector3(x,y,z);
+        return new Vector3(x,y,0);
     }
 
     // public void Print()
