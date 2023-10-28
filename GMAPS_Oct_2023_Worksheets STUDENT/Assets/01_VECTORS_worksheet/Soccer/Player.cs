@@ -14,13 +14,14 @@ public class Player : MonoBehaviour
     {
         if (IsCaptain)
         {
-            //6b arrow
+            //6b part 1 
             //DebugExtension.DebugArrow(transform.position, OtherPlayer.transform.position - transform.position, Color.black);
             //DebugExtension.DebugArrow(transform.position, transform.forward, Color.blue);
 
             //float angle = // Your code here
             //Debug.Log(angle);
 
+            //6d part 1
             Debug.Log(AngleToPlayer());
 
 
@@ -50,9 +51,6 @@ public class Player : MonoBehaviour
     {
         Vector3 PlayerPOS = transform.position;
         Vector3 OtherPlayerPOS = OtherPlayer.transform.position;
-
-        Magnitude(OtherPlayerPOS - PlayerPOS);
-        //Dot(Normalise(PlayerPOS), Normalise(OtherPlayerPOS));
 
         float angle = math.acos(Dot(Normalise(transform.forward), Normalise(OtherPlayerPOS))/
         (Magnitude(Normalise(transform.forward))) * Magnitude(Normalise(OtherPlayerPOS))) * Mathf.Rad2Deg;
