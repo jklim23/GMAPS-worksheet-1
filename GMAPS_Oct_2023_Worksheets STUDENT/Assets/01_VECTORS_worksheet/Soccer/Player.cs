@@ -9,20 +9,7 @@ public class Player : MonoBehaviour
     public bool IsCaptain = true;
     public Player OtherPlayer;
 
-    private void Start()
-    {
-        
-
-
-    }
-    private void Update()
-    {
-        //if (IsCaptain)
-        //{
-        //    Debug.Log(AngleToPlayer());
-        //}
-
-    }
+   
     void FixedUpdate()
     {
         if (IsCaptain)
@@ -42,7 +29,7 @@ public class Player : MonoBehaviour
 
     float Magnitude(Vector3 vector)
     {
-         return (float)Math.Sqrt(vector.x * vector.x + vector.y * vector.y);
+         return (float)Math.Sqrt(vector.x * vector.x + vector.y * vector.y + vector.z * vector.z);
     }
 
     Vector3 Normalise(Vector3 vector)
@@ -50,12 +37,13 @@ public class Player : MonoBehaviour
         float mag = Magnitude(vector);
         vector.x /= mag;
         vector.y /= mag; 
+        vector.z /= mag;
         return vector;
     }
 
     float Dot(Vector3 vectorA, Vector3 vectorB)
     {
-        return (vectorA.x * vectorB.x + vectorA.y * vectorB.y);
+        return (vectorA.x * vectorB.x + vectorA.y * vectorB.y + vectorA.z * vectorB.z);
     }
 
     float AngleToPlayer()
@@ -64,10 +52,11 @@ public class Player : MonoBehaviour
         Vector3 OtherPlayerPOS = OtherPlayer.transform.position;
 
         Magnitude(OtherPlayerPOS - PlayerPOS);
-        Dot(Normalise(PlayerPOS),Normalise(OtherPlayerPOS));
+        //Dot(Normalise(PlayerPOS), Normalise(OtherPlayerPOS));
 
-        float angle = math.acos(Dot(Normalise(PlayerPOS) , Normalise(OtherPlayerPOS)) /
-        (Magnitude(PlayerPOS) * Magnitude(OtherPlayerPOS))) * Mathf.Rad2Deg;
+        float angle = math.acos(Dot(Normalise(transform.forward), Normalise(OtherPlayerPOS))/
+        (Magnitude(Normalise(transform.forward))) * Magnitude(Normalise(OtherPlayerPOS))) * Mathf.Rad2Deg;
+
         DebugExtension.DebugArrow(PlayerPOS, OtherPlayerPOS - PlayerPOS, Color.black);
         DebugExtension.DebugArrow(PlayerPOS, transform.forward, Color.blue);
 
