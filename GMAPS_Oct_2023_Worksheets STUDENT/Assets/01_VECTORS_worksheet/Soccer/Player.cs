@@ -47,7 +47,10 @@ public class Player : MonoBehaviour
 
     Vector3 Normalise(Vector3 vector)
     {
-        return Vector3.Normalize(vector);
+        float mag = Magnitude(vector);
+        vector.x /= mag;
+        vector.y /= mag; 
+        return vector;
     }
 
     float Dot(Vector3 vectorA, Vector3 vectorB)
@@ -57,17 +60,19 @@ public class Player : MonoBehaviour
 
     float AngleToPlayer()
     {
+        Vector3 PlayerPOS = transform.position;
+        Vector3 OtherPlayerPOS = OtherPlayer.transform.position;
 
+        Magnitude(OtherPlayerPOS - PlayerPOS);
+        Dot(Normalise(PlayerPOS),Normalise(OtherPlayerPOS));
 
-        
+        float angle = math.acos(Dot(Normalise(PlayerPOS) , Normalise(OtherPlayerPOS)) /
+        (Magnitude(PlayerPOS) * Magnitude(OtherPlayerPOS))) * Mathf.Rad2Deg;
+        DebugExtension.DebugArrow(PlayerPOS, OtherPlayerPOS - PlayerPOS, Color.black);
+        DebugExtension.DebugArrow(PlayerPOS, transform.forward, Color.blue);
 
-        float angle = math.acos(Dot(transform.position , OtherPlayer.transform.position)/
-        (Magnitude(transform.position) * Magnitude(OtherPlayer.transform.position))) * Mathf.Rad2Deg;
-
-        DebugExtension.DebugArrow(transform.position, OtherPlayer.transform.position - transform.position, Color.black);
-        DebugExtension.DebugArrow(transform.position, transform.forward, Color.blue);
         return angle;
-    }
+    }   
+    
 
-
-}
+} 
