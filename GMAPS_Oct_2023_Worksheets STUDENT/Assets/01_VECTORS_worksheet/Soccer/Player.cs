@@ -6,14 +6,24 @@ public class Player : MonoBehaviour
 {
     public bool IsCaptain = true;
     public Player OtherPlayer;
+    private Transform PlayerTF, OtherPlayerTF;
+    private void Start()
+    {
+       PlayerTF = transform;
+       OtherPlayerTF = OtherPlayer.transform;
+    }
     void FixedUpdate()
     {
         if (IsCaptain)
         {
+            //6b arrow
+            DebugExtension.DebugArrow(PlayerTF.position, OtherPlayerTF.position - PlayerTF.position, Color.black);
+            DebugExtension.DebugArrow(PlayerTF.position, transform.forward, Color.blue);
+
             //float angle = // Your code here
             //Debug.Log(angle);
-            
-            DebugExtension.DebugArrow(transform.position, OtherPlayer.transform.position, Color.red);
+
+
 
         }
     }
