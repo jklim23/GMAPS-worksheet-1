@@ -64,12 +64,14 @@ public class SoccerPlayer : MonoBehaviour
         foreach (SoccerPlayer other in OtherPlayers)
         {
             //ray to point to captain
-            Debug.DrawRay(transform.position, OtherPlayers[i].transform.position, Color.black);
+            Debug.DrawRay(transform.position, other.transform.position, Color.black);
 
-            //
-            Debug.DrawRay(other.transform.position, other.OtherPlayers[i].transform.position, Color.black);
+            foreach (SoccerPlayer player in OtherPlayers)
+            {
+                Debug.DrawRay(player.transform.position, other.transform.position, Color.black);
+            }
 
-            i++;
+        i++;
         }
     }
 
