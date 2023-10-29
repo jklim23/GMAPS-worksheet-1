@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Linq;
 using Unity.Mathematics;
 using System;
+using Random = UnityEngine.Random;
 
 public class SoccerPlayer : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class SoccerPlayer : MonoBehaviour
     {
         OtherPlayers = FindObjectsOfType<SoccerPlayer>().Where(t => t != this).ToArray();
         //ForEachLoopToFindPlayers();
+        //FindMinimum();
     }
     private void Update()
     {
@@ -28,6 +30,15 @@ public class SoccerPlayer : MonoBehaviour
             transform.localRotation = Quaternion.AngleAxis(angle,Vector3.up);
             Debug.DrawRay(transform.position,transform.forward * 10f,Color.red);
             DrawVectors();
+
+
+            SoccerPlayer TargetPlayer = FindClosestPlayerDot();
+            TargetPlayer.GetComponent<Renderer>().material.color = Color.green;
+
+            foreach(SoccerPlayer other in OtherPlayers.Where(t => t != TargetPlayer))
+            {
+                other.GetComponent<Renderer>().material.color = Color.white;
+            }
         }
         
     }
@@ -51,12 +62,28 @@ public class SoccerPlayer : MonoBehaviour
         return (vectorA.x * vectorB.x + vectorA.y * vectorB.y + vectorA.z * vectorB.z);
     }
 
-    //SoccerPlayer FindClosestPlayerDot()
-    //{
-    //    SoccerPlayer closest = null;
+    SoccerPlayer FindClosestPlayerDot()
+    {
+        SoccerPlayer closest = null;
+        float MinAngle = 180f;
 
-    //    return closest;
-    //}
+        for (int i = 0;i < OtherPlayers.Length; i++)
+        {
+            Vector3 toPlayer = OtherPlayers[i].transform.position;
+            toPlayer = Normalise(toPlayer);
+
+            float dot = Dot(Normalise(transform.forward), toPlayer);
+            float angle = Mathf.Acos(dot/(Magnitude(toPlayer)* (Magnitude(transform.forward))));
+            angle = angle * Mathf.Rad2Deg;
+
+            if(angle < MinAngle)
+            {
+                MinAngle = angle;
+                closest = OtherPlayers[i];
+            }
+        }
+        return closest;
+    }
 
     void DrawVectors()
     {
@@ -64,11 +91,12 @@ public class SoccerPlayer : MonoBehaviour
         foreach (SoccerPlayer other in OtherPlayers)
         {
             //ray to point to captain
-            Debug.DrawRay(transform.position, other.transform.position, Color.black);
+            //Debug.DrawRay(transform.position, other.transform.position, Color.black);
 
+            //qns 6c part 2
             foreach (SoccerPlayer player in OtherPlayers)
             {
-                Debug.DrawRay(player.transform.position, other.transform.position, Color.black);
+                Debug.DrawRay(player.transform.position, other.transform.position -player.transform.position, Color.black);
             }
 
         i++;
@@ -93,6 +121,15 @@ public class SoccerPlayer : MonoBehaviour
         }
 
         OtherPlayers = temp;
+    }
+
+    void FindMinimum()
+    {
+        for(int i = 0; i < 10; i++)
+        {
+            float height = Random.Range(5f,20f);
+            Debug.Log(height);
+        }
     }
 }
 
