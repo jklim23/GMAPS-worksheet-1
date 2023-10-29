@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/01_VECTORS_worksheet/Soccer/Question_6a.unity
+- path: Assets/01_VECTORS_worksheet/Soccer/Soccer.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
