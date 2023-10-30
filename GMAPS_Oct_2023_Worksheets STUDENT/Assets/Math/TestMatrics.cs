@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class TestMatrics : MonoBehaviour
 {
+    private HMatrix2D m_Matrix = new HMatrix2D();
     // Start is called before the first frame update
     void Start()
     {
+       m_Matrix.setIdentity();
+       m_Matrix.Print();
         
     }
 
