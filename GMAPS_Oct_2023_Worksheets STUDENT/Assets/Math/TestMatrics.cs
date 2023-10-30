@@ -8,8 +8,8 @@ public class TestMatrics : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       m_Matrix.setIdentity();
-       m_Matrix.Print();
+        m_Matrix.setIdentity();
+        m_Matrix.Print();
         
     }
 

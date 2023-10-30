@@ -51,14 +51,17 @@ public class HMatrix2D
         {
             for(int x = 0; x < 3; x++)
             {
-                if (x == 0)
-                {   
-                    entries[x, y] = 1;
-                }
-                else
-                {
-                    entries[x, y] = 0;
-                }
+                //if (x == y)
+                //{   
+                //    entries[x, y] = 1;
+                //}
+                //else
+                //{
+                //    entries[x, y] = 0;
+                //}
+
+                //ternary code
+                entries[x,y] = (x==y) ? 1 : 0;
             }
             
         }
@@ -125,12 +128,38 @@ public class HMatrix2D
 
     //public static bool operator ==(HMatrix2D left, HMatrix2D right)
     //{
-    //    // your code here
+    //    for (int y = 0; y < 3; y++)
+    //    {
+    //        for (int x = 0; x < 3; x++)
+    //        {
+    //            if (left.entries[y, x] != right.entries[y, x])
+    //            {
+    //                return false;
+    //            }
+    //            else
+    //            {
+    //                return true;
+    //            }
+    //        }
+    //    }
     //}
 
     //public static bool operator !=(HMatrix2D left, HMatrix2D right)
     //{
-    //    // your code here
+    //    for (int y = 0; y < 3; y++)
+    //    {
+    //        for (int x = 0; x < 3; x++)
+    //        {
+    //            if (left.entries[y,x] == right.entries[y, x])
+    //            {
+    //                return false;
+    //            }
+    //            else
+    //            {
+    //                return true;
+    //            }
+    //        }
+    //    }
     //}
 
     //public override bool Equals(object obj)
