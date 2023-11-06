@@ -273,7 +273,8 @@ public class HMatrix2D
 
     //public void setScalingMat(float scaleX, float scaleY)
     //{
-    //    // your code here
+
+
     //}
 
     public void Print()
