@@ -30,15 +30,20 @@ public class TransformMesh : MonoBehaviour
     void Translate(float x, float y)
     {
         // Your code here
+        transformMatrix.setIdentity();
+        transformMatrix.setTranslationMat(x, y);
+        Transform();
+
+        pos = transformMatrix * pos;
     }
 
     void Rotate(float angle)
     {
-        //transformMatrix.SetIdentity();
+        transformMatrix.setIdentity();
 
         //// Your code here
 
-        //transformMatrix = fromOriginMatrix * // Your code here;
+        //transformMatrix = fromOriginMatrix ;
 
         //Transform();
     }
@@ -49,7 +54,10 @@ public class TransformMesh : MonoBehaviour
 
         for (int i = 0; i < vertices.Length; i++)
         {
-            // Your code here
+            HVector2D vert = new HVector2D(vertices[i].x, vertices[i].y);
+            vert = transformMatrix * vert;
+            vertices[i].x = vert.x;
+            vertices[i].y = vert.y;
         }
 
         meshManager.clonedMesh.vertices = vertices;
