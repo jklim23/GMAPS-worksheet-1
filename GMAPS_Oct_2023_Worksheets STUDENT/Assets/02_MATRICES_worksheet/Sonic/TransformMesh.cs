@@ -39,13 +39,16 @@ public class TransformMesh : MonoBehaviour
 
     void Rotate(float angle)
     {
+        HMatrix2D toOriginMatrix = new HMatrix2D();
+        HMatrix2D fromOriginMatrix = new HMatrix2D();
+        HMatrix2D RotateMatrix = new HMatrix2D();
         transformMatrix.setIdentity();
 
         //// Your code here
 
-        //transformMatrix = fromOriginMatrix ;
+        transformMatrix = fromOriginMatrix;
 
-        //Transform();
+        Transform();
     }
 
     private void Transform()
