@@ -25,7 +25,7 @@ public class TransformMesh : MonoBehaviour
 
         // Your code here
         Rotate(45);
-        //Translate(1,2);
+        Translate(1, 2);
     }
 
 
