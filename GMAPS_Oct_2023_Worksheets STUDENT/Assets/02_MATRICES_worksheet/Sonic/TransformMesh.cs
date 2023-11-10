@@ -11,9 +11,9 @@ public class TransformMesh : MonoBehaviour
     public Vector3[] vertices { get; private set; }
 
     private HMatrix2D transformMatrix = new HMatrix2D();
-    HMatrix2D toOriginMatrix = new HMatrix2D();
-    HMatrix2D fromOriginMatrix = new HMatrix2D();
-    HMatrix2D rotateMatrix = new HMatrix2D();
+    //HMatrix2D toOriginMatrix = new HMatrix2D();
+    //HMatrix2D fromOriginMatrix = new HMatrix2D();
+    //HMatrix2D rotateMatrix = new HMatrix2D();
 
     private MeshManager meshManager;
     HVector2D pos = new HVector2D();
@@ -24,6 +24,8 @@ public class TransformMesh : MonoBehaviour
         pos = new HVector2D(gameObject.transform.position.x, gameObject.transform.position.y);
 
         // Your code here
+        Rotate(45);
+        //Translate(1,2);
     }
 
 
@@ -42,11 +44,16 @@ public class TransformMesh : MonoBehaviour
         HMatrix2D toOriginMatrix = new HMatrix2D();
         HMatrix2D fromOriginMatrix = new HMatrix2D();
         HMatrix2D RotateMatrix = new HMatrix2D();
+
+        toOriginMatrix.setTranslationMat(pos.x,pos.y);
+        fromOriginMatrix.setTranslationMat(pos.x,pos.y);
+        
+
+        RotateMatrix.setRotationMat(angle);
+        //RotateMatrix.Print();
+
         transformMatrix.setIdentity();
-
-        //// Your code here
-
-        transformMatrix = fromOriginMatrix;
+        transformMatrix = fromOriginMatrix * RotateMatrix * toOriginMatrix;
 
         Transform();
     }

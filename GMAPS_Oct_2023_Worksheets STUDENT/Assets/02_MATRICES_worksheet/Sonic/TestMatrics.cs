@@ -14,10 +14,10 @@ public class TestMatrics : MonoBehaviour
         
 
         //identity matrix
-        m_Matrix.setIdentity();
-        m_Matrix.Print();
+        //m_Matrix.setIdentity();
+        //m_Matrix.Print();
 
-        Question2();
+        //Question2();
 
 
     }

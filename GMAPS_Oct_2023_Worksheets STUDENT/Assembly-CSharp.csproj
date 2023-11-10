@@ -61,6 +61,7 @@
     <Compile Include="Assets\Math\HVector2D.cs" />
     <Compile Include="Assets\02_MATRICES_worksheet\Sonic\TransformMesh.cs" />
     <Compile Include="Assets\01_VECTORS_worksheet\Mario\Mario.cs" />
+    <Compile Include="Assets\02_MATRICES_worksheet\Sonic\HMatrix2D.cs" />
     <Compile Include="Assets\02_MATRICES_worksheet\Sonic\MeshManager.cs" />
     <Compile Include="Assets\01_VECTORS_worksheet\VectorPart1\VectorExercises.cs" />
     <Compile Include="Assets\01_VECTORS_worksheet\Soccer\SoccerPlayer.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Assets\02_MATRICES_worksheet\Sonic\HMatrics2D.cs" />
     <Compile Include="Assets\Resources_3rd Party\LineDraw\Scripts\Extensions.cs" />
     <Compile Include="Assets\Resources_3rd Party\Ruler\zzVerticalRuler.cs" />
+    <Compile Include="Assets\02_MATRICES_worksheet\Sonic\TestMatrix.cs" />
     <Compile Include="Assets\Resources_3rd Party\DebugDrawingExtension\DebugExtension.cs" />
     <Compile Include="Assets\Resources_3rd Party\LineDraw\_Demo\LineDemo.cs" />
   </ItemGroup>
