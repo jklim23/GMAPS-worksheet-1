@@ -48,7 +48,6 @@ public class TransformMesh : MonoBehaviour
         toOriginMatrix.setTranslationMat(pos.x,pos.y);
         fromOriginMatrix.setTranslationMat(pos.x,pos.y);
         
-
         RotateMatrix.setRotationMat(angle);
         //RotateMatrix.Print();
 
