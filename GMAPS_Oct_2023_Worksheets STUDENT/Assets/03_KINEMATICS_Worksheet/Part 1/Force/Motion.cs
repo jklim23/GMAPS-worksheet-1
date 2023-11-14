@@ -14,6 +14,6 @@ public class Motion : MonoBehaviour
         float dy = Velocity.y * dt;
         float dz = Velocity.z * dt;
 
-        transform.position = new Vector3(dx, dy, dz);
+        transform.Translate(dx, dy, dz);    
     }
 }
