@@ -80,7 +80,6 @@
     <Compile Include="Assets\Resources_3rd Party\LineDraw\Scripts\Extensions.cs" />
     <Compile Include="Assets\03_KINEMATICS_Worksheet\Part 1\JumpToHeight\JumpToHeight.cs" />
     <Compile Include="Assets\Resources_3rd Party\Ruler\zzVerticalRuler.cs" />
-    <Compile Include="Assets\02_MATRICES_worksheet\Sonic\TestMatrix.cs" />
     <Compile Include="Assets\Resources_3rd Party\DebugDrawingExtension\DebugExtension.cs" />
     <Compile Include="Assets\Resources_3rd Party\LineDraw\_Demo\LineDemo.cs" />
   </ItemGroup>
