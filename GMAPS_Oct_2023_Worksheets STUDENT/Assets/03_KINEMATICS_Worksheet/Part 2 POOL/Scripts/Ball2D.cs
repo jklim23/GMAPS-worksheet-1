@@ -13,13 +13,13 @@ public class Ball2D : MonoBehaviour
 
     private void Start()
     {
-        //HVector2D a = new HVector2D(8,5);
-        //HVector2D b = new HVector2D(1,3);
-        //float testdistance = Util.FindDistance(a, b);
-        //Debug.Log(testdistance);
+        //    HVector2D a = new HVector2D(8, 5);
+        //    HVector2D b = new HVector2D(1, 3);
+        //    float testdistance = Util.FindDistance(a, b);
+        //    Debug.Log(testdistance);
 
         Position.x = transform.position.x;
-        Position.y = transform.position.y;
+        Position.y = transform.position.y;  
 
         Sprite sprite = GetComponent<SpriteRenderer>().sprite;
         Vector2 sprite_size = sprite.rect.size;
@@ -46,13 +46,13 @@ public class Ball2D : MonoBehaviour
 
     private void UpdateBall2DPhysics(float deltaTime)
     {
-        //float displacementX = /*your code here*/;
-        //float displacementY = /*your code here*/;
+        //    float displacementX = /*your code here*/;
+        //    float displacementY = /*your code here*/;
 
-        //Position.x += /*your code here*/;
-        //Position.y += /*your code here*/;
+        //    Position.x += /*your code here*/;
+        //    Position.y += /*your code here*/;
 
-        //transform.position = new Vector2(/*your code here*/);
+        transform.position = new Vector2(/*your code here*/);
     }
 }
 
