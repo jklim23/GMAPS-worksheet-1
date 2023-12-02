@@ -25,7 +25,7 @@ public class HMatrix2D
             }
         }
     }
-
+    // function to insert values into a HMatrix2D array 
     public HMatrix2D(float m00, float m01, float m02,
              float m10, float m11, float m12,
              float m20, float m21, float m22)
@@ -44,6 +44,7 @@ public class HMatrix2D
         entries[2, 2] = m22;
 
     }
+    //function to set indentity matrix
     public void setIdentity()
     {
         
@@ -67,6 +68,7 @@ public class HMatrix2D
         }
     }
 
+    // + operator for HMartix2d
     public static HMatrix2D operator +(HMatrix2D left, HMatrix2D right)
     {
 
@@ -83,7 +85,7 @@ public class HMatrix2D
             left.entries[2, 2] + right.entries[2,2]
         ) ;
     }
-
+    // - operator for HMartix2d
     public static HMatrix2D operator -(HMatrix2D left, HMatrix2D right)
     {
         return new HMatrix2D
@@ -99,7 +101,7 @@ public class HMatrix2D
             left.entries[2, 2] - right.entries[2, 2]
         );
     }
-
+    // * operator for HMartix2d for scaling 
     public static HMatrix2D operator *(HMatrix2D left, float scalar)
     {
         return new HMatrix2D
@@ -119,6 +121,7 @@ public class HMatrix2D
     }
 
     // Note that the second argument is a HVector2D object
+    // * operator for HMartix2d
     //
     public static HVector2D operator *(HMatrix2D left, HVector2D right)
     {
@@ -203,7 +206,7 @@ public class HMatrix2D
 
         );
     }
-
+    //operator == to chefck if a HMatrix2D is equal to another HMatrix2D 
     public static bool operator ==(HMatrix2D left, HMatrix2D right)
     {
         for (int row = 0; row < 3; row++)
@@ -221,7 +224,7 @@ public class HMatrix2D
         return true;
 
     }
-
+    //operator != to chefck if a HMatrix2D is not to another HMatrix2D 
     public static bool operator !=(HMatrix2D left, HMatrix2D right)
     {
         for (int row = 0; row < 3; row++)
@@ -260,14 +263,14 @@ public class HMatrix2D
     //}
 
 
-
+    //set a translation matrix 
     public void setTranslationMat(float transX, float transY)
     {
         setIdentity();
         entries[0, 2] = transX;
         entries[1, 2] = transY;
     }
-
+    //set a rotation matrix
     public void setRotationMat(float rotDeg)
     {
         setIdentity();
@@ -278,7 +281,7 @@ public class HMatrix2D
         entries[1, 1] = Mathf.Cos(rad);
 
     }
-
+    //set a scaling a matrix
     public void setScalingMat(float scaleX, float scaleY)
     {
         setIdentity();
@@ -286,7 +289,7 @@ public class HMatrix2D
         entries[1,1] = entries[1, 1] * scaleY;
 
     }
-
+    // print out a HMatrix's values
     public void Print()
     {
         string result = "";

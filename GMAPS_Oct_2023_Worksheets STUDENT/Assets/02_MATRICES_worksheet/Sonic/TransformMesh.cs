@@ -28,7 +28,7 @@ public class TransformMesh : MonoBehaviour
         Translate(1, 2);
     }
 
-
+    //translation function
     void Translate(float x, float y)
     {
         // Your code here
@@ -38,7 +38,7 @@ public class TransformMesh : MonoBehaviour
 
         pos = transformMatrix * pos;
     }
-
+    //rotation function
     void Rotate(float angle)
     {
         HMatrix2D toOriginMatrix = new HMatrix2D();
@@ -56,7 +56,7 @@ public class TransformMesh : MonoBehaviour
 
         Transform();
     }
-
+    //transform function
     private void Transform()
     {
         vertices = meshManager.clonedMesh.vertices;
