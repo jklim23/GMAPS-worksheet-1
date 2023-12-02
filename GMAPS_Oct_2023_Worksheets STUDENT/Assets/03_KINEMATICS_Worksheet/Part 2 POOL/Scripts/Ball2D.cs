@@ -25,6 +25,8 @@ public class Ball2D : MonoBehaviour
         Vector2 sprite_size = sprite.rect.size;
         Vector2 local_sprite_size = sprite_size / sprite.pixelsPerUnit;
         Radius = local_sprite_size.x / 2f;
+
+  
     }
 
     public bool IsCollidingWith(float x, float y)
@@ -46,13 +48,13 @@ public class Ball2D : MonoBehaviour
 
     private void UpdateBall2DPhysics(float deltaTime)
     {
-        //    float displacementX = /*your code here*/;
-        //    float displacementY = /*your code here*/;
+        float displacementX = Position.x * deltaTime;
+        float displacementY = Position.y * deltaTime;
 
-        //    Position.x += /*your code here*/;
-        //    Position.y += /*your code here*/;
+        Position.x += Velocity.x;
+        Position.y += Velocity.y;
 
-        transform.position = new Vector2(/*your code here*/);
+        transform.position = new Vector2(displacementX, displacementY);
     }
 }
 
