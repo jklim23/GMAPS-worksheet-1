@@ -41,7 +41,7 @@ public class Ball2D : MonoBehaviour
         return distance <= Radius + other.Radius;
     }
 
-    public void FixedUpdate()
+    public void FixedUpdate()   
     {
         UpdateBall2DPhysics(Time.deltaTime);
     }
