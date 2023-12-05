@@ -14,18 +14,18 @@ public class JumpToHeight : MonoBehaviour
 
     void Jump()
     {
-        
-        //float a = Physics.gravity.y;
-        //float vSq = 0;
-        //float uSq = vSq - 2 * a * Height;
 
-        //float u = Mathf.Sqrt(uSq);
-        //rb.velocity = new Vector3(0, u, 0);
+        float a = Physics.gravity.y;
+        float vSq = 0;
+        float uSq = vSq - 2 * a * Height;
 
-        float jumpForce = Mathf.Sqrt(-2 * Physics2D.gravity.y * Height);    
-        rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
+        float u = Mathf.Sqrt(uSq);
+        rb.velocity = new Vector3(0, u, 0);
+
+        //float jumpForce = Mathf.Sqrt(-2 * Physics2D.gravity.y * Height);    
+        //rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
     }
-
+        
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
